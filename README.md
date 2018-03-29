@@ -156,8 +156,8 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       ```
 ## Authors
 
-* **Hristiyan Tarnev** - *Initial work* - [PurpleBooth](https://github.com/beasteca)
-* **Martin Savov** - *Initial work* - [PurpleBooth](https://github.com/MIT120)
+* **Hristiyan Tarnev** - *Initial work* - [Beasteca](https://github.com/beasteca)
+* **Martin Savov** - *Initial work* - [MIT120](https://github.com/MIT120)
 
 See also the list of [contributors](https://github.com/teamvirtue/SmartSystemCore/graphs/contributors) who participated in this project.
 
