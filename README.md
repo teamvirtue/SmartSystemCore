@@ -55,3 +55,29 @@ DATABASES = {
 ### Coming soon
 ## Extending a **models.py** for database 
 ### Coming soon
+## Extending serializable.py
+### Overview
+**serializable.py** is resopnsible for serializing the data from the orm to json format.
+### Create a new serializable class
+#### Prerequisites
+1. Importing serializers
+```
+from rest_framework import serializers
+from .models import ModelClass
+```
+2. Creating a new serializable class to json
+**Note: That these classes work with *serializers.HyperlinkedModelSerializer***
+  * serializing all fields
+```
+class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ModelClass
+        fields = "__all__"
+```
+  * serializing custom fields
+```
+class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ModelClass
+        fields = ('modelfield', 'modelfield', 'modelfield', 'modelfield')
+```
