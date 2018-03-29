@@ -168,14 +168,15 @@ Creating view sets from the models in the model class.
       from rest_framework.reverse import reverse
       from rest_framework.views import APIView
       ```
-  3. Import serializers ```from .serializers import ExampleSerializer,SensorSerializer, BuildingSerializer, WeatherSerializer```
-  4. Import models ```from .models import Example, Sensor, Building, Weather```
+  3. Import serializers ```from .serializers import ExampleSerializer```
+  4. Import models ```from .models import Example```
 #### Create a view
-   **Example**
+  
+     **Example**
       ```ruby
-    class ExampleViewSet(viewsets.ModelViewSet):
-    queryset = Example.objects.all()
-    serializer_class = ExampleSerializer
+     class ExampleViewSet(viewsets.ModelViewSet):
+     queryset = Example.objects.all()
+     serializer_class = ExampleSerializer
       ```
 ## Extending admin
  1. Customizing a admin model
