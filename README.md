@@ -60,7 +60,6 @@
 3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
 #### Overview
    **Example**
-   
       ```ruby
       class Example(models.Model):
       city = models.CharField(max_length=50)
@@ -78,10 +77,10 @@
 1. Importing serializers
    
    **Example**
-      ```ruby
-      from rest_framework import serializers
-      from .models import ModelClass
-      ```
+     ```ruby
+     from rest_framework import serializers
+     from .models import ModelClass
+     ```
 2. Creating a new serializable class to json
   
    **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
