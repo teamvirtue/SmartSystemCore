@@ -60,16 +60,17 @@
 3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
 #### Overview
    **Example**
-      ```ruby
-      class Example(models.Model):
-      city = models.CharField(max_length=50)
-      street = models.CharField(max_length=45)
-      postcode = models.CharField(max_length=45)
-      country = models.CharField(max_length=45)
-      nr_Of_Floors = models.IntegerField()
-      building_name = models.CharField(max_length=45)
-      gender = models.CharField(max_length=1, choices=ENUMGENDER)
-      ```
+   
+       ```ruby
+       class Example(models.Model):
+       city = models.CharField(max_length=50)
+       street = models.CharField(max_length=45)
+       postcode = models.CharField(max_length=45)
+       country = models.CharField(max_length=45)
+       nr_Of_Floors = models.IntegerField()
+       building_name = models.CharField(max_length=45)
+       gender = models.CharField(max_length=1, choices=ENUMGENDER)
+       ```
 ## Extending serializables
 #### Overview
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
