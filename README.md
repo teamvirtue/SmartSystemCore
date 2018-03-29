@@ -134,7 +134,7 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       ```
 ## Extending admin
  1. Customizing a admin model
-   * Custom class
+    * Custom class
       
      **Example**
       ```ruby
@@ -142,4 +142,13 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       list_display = ('modelfield', 'modelfield')
       model = models.ModelClass
       ```
-   * Register   
+    * Register a custom class
+     **Example**
+      ```ruby
+      admin.site.register(models.ModelClass, ModelClassAdmin)
+      ```
+    * Register with framework default
+     **Example**
+      ```ruby
+      admin.site.register(models.ModelClass)
+      ```
