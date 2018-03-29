@@ -60,6 +60,7 @@
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
 #### Create a new serializable class
 1. Importing serializers
+   
    **Example**
     ```ruby
     from rest_framework import serializers
@@ -69,6 +70,7 @@
   
   **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
   * serializing all fields
+    
     **Example**
       ```ruby
       class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -77,6 +79,7 @@
               fields = "__all__"
       ```
   * serializing custom fields
+    
     **Example**
       ```ruby
       class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -89,12 +92,14 @@
 The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
 #### Prerequisites
 1. Import **urls** from framework
+   
    **Example**
     ```ruby
     from django.conf.urls import url, include
     from django.urls import path
     ```
 2. Import **views** from gatherer directory
+   
    **Example**
     ```ruby
     from . import views
@@ -102,22 +107,26 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
 #### Router
 1. Create a Router
   * DefaultRouter
+     
      **Example**
       ```ruby
       router = routers.DefaultRouter()
       ```
   * SimpleRouter
+     
      **Example**
       ```ruby
       router = routers.SimpleRouter()
       ```
  2. Register a Serializer
+     
      **Example**
       ```ruby
       router.register('url_name', views.ModelClassViewSet)
       ```
  3. Add **router** to application urls
-      **Example**
+     
+     **Example**
       ```ruby
       urlpatterns = [
         path('', include(router.urls))
@@ -126,6 +135,7 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
 ## Extending admin
   1. Customizing a admin model
      * Custom class
+      
       **Example**
        ```ruby
         class ModelClassAdmin(admin.ModelAdmin):
