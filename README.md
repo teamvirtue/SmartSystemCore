@@ -35,7 +35,7 @@
 ## Development environment setup
 1. Install all requirments run command in the project directory ```pip install -r requirements.txt```
 2. Setting up database, add this code to **setings.py**  
-```
+```python
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -60,7 +60,7 @@ DATABASES = {
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
 #### Create a new serializable class
 1. Importing serializers
-```
+```python
 from rest_framework import serializers
 from .models import ModelClass
 ```
@@ -68,14 +68,14 @@ from .models import ModelClass
   
   **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
   * serializing all fields
-```
+```ruby
 class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ModelClass
         fields = "__all__"
 ```
   * serializing custom fields
-```
+```ruby
 class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ModelClass
@@ -87,10 +87,10 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
 #### Router
 1. Create a Router
   * DefaultRouter
-    ```
+    ```ruby
     router = routers.DefaultRouter()
     ```
   * SimpleRouter
-    ```
+    ```ruby
     router = routers.SimpleRouter()
     ```
