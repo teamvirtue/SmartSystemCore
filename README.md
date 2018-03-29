@@ -68,10 +68,15 @@
          postcode = models.CharField(max_length=45)
          country = models.CharField(max_length=45)
          nr_Of_Floors = models.IntegerField()
-         building_name = models.CharField(max_length=45)
-         gender = models.CharField(max_length=1, choices=ENUMGENDER)   
+         building_name = models.CharField(max_length=45)  
   ```        
-     
+  If you need to implement **enum** as a field ``` gender = models.CharField(max_length=1, choices=ENUMGENDER)```
+  ```ruby
+     ENUMGENDER = (
+    ('M', 'Male'),
+    ('F', 'Female'),
+    )
+  ```
 ## Extending serializables
 #### Overview
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
