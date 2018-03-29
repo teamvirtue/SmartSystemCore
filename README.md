@@ -59,8 +59,8 @@
 2. Import **settings** from framework ```from django.conf import settings```
 3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
 #### Overview
-   **Example**
-   
+
+  **Example**
       ```ruby
        class Example(models.Model):
        city = models.CharField(max_length=50)
