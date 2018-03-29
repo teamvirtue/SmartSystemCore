@@ -35,7 +35,7 @@
 ## Development environment setup
 1. Install all requirments run command in the project directory ```pip install -r requirements.txt```
 2. Setting up database, add this code to **setings.py**  
-```python
+```ruby
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -85,21 +85,32 @@ class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
 #### Overview
 The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
 #### Prerequisites
-1. Import Urls from framework
-```C
-from django.urls import path
-```
+1. Import **urls** from framework
+    ```ruby
+    from django.conf.urls import url, include
+    from django.urls import path
+    ```
+2. Import **views** from gatherer directory
+    ```ruby
+    from . import views
+    ```
 #### Router
 1. Create a Router
   * DefaultRouter
-    ```C
+    ```ruby
     router = routers.DefaultRouter()
     ```
   * SimpleRouter
-    ```C
+    ```ruby
     router = routers.SimpleRouter()
     ```
  2. Register a Serializer
+    ```ruby
+    router.register('url_name', views.ModelClassViewSet)
     ```
-    router.register('url_name', views.BuildingViewSet)
+ 3. Add **router** to application urls
+    ```ruby
+    urlpatterns = [
+      path('', include(router.urls))
+    ]
     ```
