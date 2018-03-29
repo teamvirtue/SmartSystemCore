@@ -154,6 +154,29 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
         path('', include(router.urls))
       ]
       ```
+## Extending views
+#### Overview
+Creating view sets from the models in the model class.
+#### Prerequisites
+ 1. Import **HttpResponse, render** from framework ```from django.shortcuts import render, HttpResponse```
+ 2. Import rest_framework
+  **Example**
+      ```ruby
+      from rest_framework import generics, viewsets
+      from rest_framework.response import Response
+      from rest_framework import status
+      from rest_framework.reverse import reverse
+      from rest_framework.views import APIView
+      ```
+  3. Import serializers ```from .serializers import ExampleSerializer,SensorSerializer, BuildingSerializer, WeatherSerializer```
+  4. Import models ```from .models import Example, Sensor, Building, Weather```
+#### Create a view
+   **Example**
+      ```ruby
+    class ExampleViewSet(viewsets.ModelViewSet):
+    queryset = Example.objects.all()
+    serializer_class = ExampleSerializer
+      ```
 ## Extending admin
  1. Customizing a admin model
     * Custom class
