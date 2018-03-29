@@ -66,7 +66,8 @@ from rest_framework import serializers
 from .models import ModelClass
 ```
 2. Creating a new serializable class to json
-**Note: That these classes work with *serializers.HyperlinkedModelSerializer***
+  
+  **Note: That these classes work with *serializers.HyperlinkedModelSerializer***
   * serializing all fields
 ```
 class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
