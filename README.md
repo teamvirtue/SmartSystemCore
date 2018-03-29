@@ -60,7 +60,8 @@
 3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
 #### Overview
    **Example**
-       ```ruby
+   
+      ```ruby
       class Example(models.Model):
       city = models.CharField(max_length=50)
       street = models.CharField(max_length=45)
@@ -69,13 +70,6 @@
       nr_Of_Floors = models.IntegerField()
       building_name = models.CharField(max_length=45)
       gender = models.CharField(max_length=1, choices=ENUMGENDER)
-    ```
-    If you need to add **enum** from field from the DB ```gender = models.CharField(max_length=1, choices=ENUMGENDER)```
-      ```ruby
-      ENUMGENDER = (
-      ('M', 'Male'),
-      ('F', 'Female'),
-      )
       ```
 ## Extending serializables
 #### Overview
