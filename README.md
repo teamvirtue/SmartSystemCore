@@ -54,7 +54,29 @@
 ## Production environment setup
 ### Coming soon
 ## Extending a **models.py** for database 
-### Coming soon
+#### Prerequisites
+1. Import **models** from framework ```from django.db import models```
+2. Import **settings** from framework ```from django.conf import settings```
+3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
+#### Overview
+   **Example**
+      ```ruby
+      class Example(models.Model):
+      city = models.CharField(max_length=50)
+      street = models.CharField(max_length=45)
+      postcode = models.CharField(max_length=45)
+      country = models.CharField(max_length=45)
+      nr_Of_Floors = models.IntegerField()
+      building_name = models.CharField(max_length=45)
+      gender = models.CharField(max_length=1, choices=ENUMGENDER)
+      ```
+    If you need to add **enum** from field from the DB ```gender = models.CharField(max_length=1, choices=ENUMGENDER)```
+      ```ruby
+      ENUMGENDER = (
+      ('M', 'Male'),
+      ('F', 'Female'),
+      )
+      ```
 ## Extending serializables
 #### Overview
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
@@ -124,7 +146,7 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       ```ruby
       router.register('url_name', views.ModelClassViewSet)
       ```
- 3. Add **router** to application urls
+3. Add **router** to application urls
      
     **Example**
       ```ruby
