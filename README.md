@@ -62,7 +62,6 @@
 
   **Example**
   
-     ``
      class Example(models.Model):
          city = models.CharField(max_length=50)
          street = models.CharField(max_length=45)
@@ -71,7 +70,7 @@
          nr_Of_Floors = models.IntegerField()
          building_name = models.CharField(max_length=45)
          gender = models.CharField(max_length=1, choices=ENUMGENDER)   
-     ``
+    
      
 ## Extending serializables
 #### Overview
