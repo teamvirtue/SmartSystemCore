@@ -55,11 +55,10 @@ DATABASES = {
 ### Coming soon
 ## Extending a **models.py** for database 
 ### Coming soon
-## Extending serializable.py
-### Overview
+## Extending serializables
+#### Overview
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
-### Create a new serializable class
-#### Prerequisites
+#### Create a new serializable class
 1. Importing serializers
 ```
 from rest_framework import serializers
@@ -67,7 +66,7 @@ from .models import ModelClass
 ```
 2. Creating a new serializable class to json
   
-  **Note: That these classes work with *serializers.HyperlinkedModelSerializer***
+  **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
   * serializing all fields
 ```
 class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
@@ -82,3 +81,16 @@ class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
         model = ModelClass
         fields = ('modelfield', 'modelfield', 'modelfield', 'modelfield')
 ```
+## Extending urls
+#### Overview
+The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
+#### Router
+1. Create a Router
+  * DefaultRouter
+    ```
+    router = routers.DefaultRouter()
+    ```
+  * SimpleRouter
+    ```
+    router = routers.SimpleRouter()
+    ```
