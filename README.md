@@ -154,3 +154,12 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       ```ruby
       admin.site.register(models.ModelClass)
       ```
+## Authors
+
+* **Hristiyan Tarnev** - *Initial work* - [PurpleBooth](https://github.com/beasteca)
+* **Martin Savov** - *Initial work* - [PurpleBooth](https://github.com/MIT120)
+
+See also the list of [contributors](https://github.com/teamvirtue/SmartSystemCore/graphs/contributors) who participated in this project.
+
+## License
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
