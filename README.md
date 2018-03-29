@@ -181,11 +181,11 @@ Creating view sets from the models in the model class.
  1. Customizing a admin model
     * Custom class
      **Example**
-      ```ruby
+     ```ruby
       class ModelClassAdmin(admin.ModelAdmin):
       list_display = ('modelfield', 'modelfield')
       model = models.ModelClass
-      ```
+     ``` 
     * Register a custom class
     
      **Example**
