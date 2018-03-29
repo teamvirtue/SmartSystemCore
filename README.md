@@ -60,7 +60,7 @@ DATABASES = {
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
 #### Create a new serializable class
 1. Importing serializers
-```python
+```ruby
 from rest_framework import serializers
 from .models import ModelClass
 ```
@@ -84,13 +84,22 @@ class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
 ## Extending urls
 #### Overview
 The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
+#### Prerequisites
+1. Import Urls from framework
+```C
+from django.urls import path
+```
 #### Router
 1. Create a Router
   * DefaultRouter
-    ```ruby
+    ```C
     router = routers.DefaultRouter()
     ```
   * SimpleRouter
-    ```ruby
+    ```C
     router = routers.SimpleRouter()
+    ```
+ 2. Register a Serializer
+    ```
+    router.register('url_name', views.BuildingViewSet)
     ```
