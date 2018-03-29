@@ -172,13 +172,11 @@ Creating view sets from the models in the model class.
   4. Import models ```from .models import Example```
   
 #### Create a view
-   
+    
    ```ruby 
-   from rest_framework import generics, viewsets
-   from rest_framework.response import Response
-   from rest_framework import status
-   from rest_framework.reverse import reverse
-   from rest_framework.views import APIView
+   class ExampleViewSet(viewsets.ModelViewSet):
+       queryset = Example.objects.all()
+       serializer_class = ExampleSerializer
    ```
 ## Extending admin
  1. Customizing a admin model
