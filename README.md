@@ -171,7 +171,7 @@ Creating view sets from the models in the model class.
   3. Import serializers ```from .serializers import ExampleSerializer```
   4. Import models ```from .models import Example```
 #### Create a view
-   **Example**
+
      ```ruby
      class ExampleViewSet(viewsets.ModelViewSet):
      queryset = Example.objects.all()
