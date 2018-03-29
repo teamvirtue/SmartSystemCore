@@ -47,7 +47,7 @@
         }
     }
     ```
-3. Check if the ```DEBUG = True``` is set in **setings.py**
+3. Check if the ```DEBUG = True``` is set in **settings.py**
 4. Make migrations for database ```python manage.py makemigrations``` 
 5. Migrate **models.py** to postgres with command ```python manage.py migrate```
 6. Run a the test server with command ```python manage.py runserver``` this will run the server on the default *port 8000* if that port is taken you can change the port that the test server runs on with ```python manage.py runserver 0.0.0.0:8090```
@@ -69,7 +69,7 @@
       nr_Of_Floors = models.IntegerField()
       building_name = models.CharField(max_length=45)
       gender = models.CharField(max_length=1, choices=ENUMGENDER)
-      ```
+    ```
     If you need to add **enum** from field from the DB ```gender = models.CharField(max_length=1, choices=ENUMGENDER)```
       ```ruby
       ENUMGENDER = (
