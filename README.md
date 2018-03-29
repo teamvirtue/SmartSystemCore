@@ -60,7 +60,7 @@
 3. Import **timestampedmodel** from database models ```from django_extensions.db.models import TimeStampedModel```
 #### Overview
    **Example**
-      ```ruby
+       ```ruby
       class Example(models.Model):
       city = models.CharField(max_length=50)
       street = models.CharField(max_length=45)
