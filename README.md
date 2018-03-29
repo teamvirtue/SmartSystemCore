@@ -35,18 +35,18 @@
 ## Development environment setup
 1. Install all requirments run command in the project directory ```pip install -r requirements.txt```
 2. Setting up database, add this code to **setings.py**  
-  ```ruby
-  DATABASES = {
-      "default": {
-          "ENGINE": "django.db.backends.postgresql",
-          "NAME": "databasename",
-          "USER": "username",
-          "PASSWORD": "secret",
-          "HOST": "localhost",
-          "PORT": "",
-      }
-  }
-  ```
+    ```ruby
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "databasename",
+            "USER": "username",
+            "PASSWORD": "secret",
+            "HOST": "localhost",
+            "PORT": "",
+        }
+    }
+    ```
 3. Check if the ```DEBUG = True``` is set in **setings.py**
 4. Make migrations for database ```python manage.py makemigrations``` 
 5. Migrate **models.py** to postgres with command ```python manage.py migrate```
@@ -60,27 +60,27 @@
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
 #### Create a new serializable class
 1. Importing serializers
-  ```ruby
-  from rest_framework import serializers
-  from .models import ModelClass
-  ```
+    ```ruby
+    from rest_framework import serializers
+    from .models import ModelClass
+    ```
 2. Creating a new serializable class to json
   
   **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
   * serializing all fields
-    ```ruby
-    class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
-        class Meta:
-            model = ModelClass
-            fields = "__all__"
-    ```
+      ```ruby
+      class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
+          class Meta:
+              model = ModelClass
+              fields = "__all__"
+      ```
   * serializing custom fields
-    ```ruby
-    class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
-        class Meta:
-            model = ModelClass
-            fields = ('modelfield', 'modelfield', 'modelfield', 'modelfield')
-    ```
+      ```ruby
+      class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
+          class Meta:
+              model = ModelClass
+              fields = ('modelfield', 'modelfield', 'modelfield', 'modelfield')
+      ```
 ## Extending urls
 #### Overview
 The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
@@ -97,20 +97,20 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
 #### Router
 1. Create a Router
   * DefaultRouter
-    ```ruby
-    router = routers.DefaultRouter()
-    ```
+      ```ruby
+      router = routers.DefaultRouter()
+      ```
   * SimpleRouter
-    ```ruby
-    router = routers.SimpleRouter()
-    ```
+      ```ruby
+      router = routers.SimpleRouter()
+      ```
  2. Register a Serializer
-    ```ruby
-    router.register('url_name', views.ModelClassViewSet)
-    ```
+      ```ruby
+      router.register('url_name', views.ModelClassViewSet)
+      ```
  3. Add **router** to application urls
-    ```ruby
-    urlpatterns = [
-      path('', include(router.urls))
-    ]
-    ```
+      ```ruby
+      urlpatterns = [
+        path('', include(router.urls))
+      ]
+      ```
