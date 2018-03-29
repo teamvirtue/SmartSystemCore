@@ -160,7 +160,9 @@ Creating view sets from the models in the model class.
 #### Prerequisites
  1. Import **HttpResponse, render** from framework ```from django.shortcuts import render, HttpResponse```
  2. Import rest_framework
+ 
   **Example**
+  
       ```ruby
       from rest_framework import generics, viewsets
       from rest_framework.response import Response
@@ -172,7 +174,8 @@ Creating view sets from the models in the model class.
   4. Import models ```from .models import Example```
 #### Create a view
   
-     **Example**
+   **Example**
+     
       ```ruby
      class ExampleViewSet(viewsets.ModelViewSet):
      queryset = Example.objects.all()
@@ -181,7 +184,6 @@ Creating view sets from the models in the model class.
 ## Extending admin
  1. Customizing a admin model
     * Custom class
-      
      **Example**
       ```ruby
       class ModelClassAdmin(admin.ModelAdmin):
