@@ -143,11 +143,13 @@ The REST framework supports automatic **urls routing** this is a quick way yo ma
       model = models.ModelClass
       ```
     * Register a custom class
+    
      **Example**
       ```ruby
       admin.site.register(models.ModelClass, ModelClassAdmin)
       ```
     * Register with framework default
+    
      **Example**
       ```ruby
       admin.site.register(models.ModelClass)
