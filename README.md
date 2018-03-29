@@ -13,7 +13,7 @@
   <br>
 </h2>
 
-# Setup sdfgh
+# Setup
 ## Prerequisites for development enviorment
 1. Make sure you have installed `python` on your machine. [Download Python](https://www.python.org/downloads/)
 2. `pip` package manager is installed. If you have a version of `python 2 >= 2.7.9 or Python 3 >= 3.4` you will probably have ``pip`` installed if not [download `pip`](https://www.python.org/downloads/) and in **Terminal** run ``` python get-pip.py```. If you have problems [pip documentation](https://pip.pypa.io/en/stable/installing/)
@@ -60,6 +60,7 @@
 **serializable.py** is resopnsible for serializing the data from the orm to json format.
 #### Create a new serializable class
 1. Importing serializers
+   **Example**
     ```ruby
     from rest_framework import serializers
     from .models import ModelClass
@@ -68,6 +69,7 @@
   
   **Note: That these classes work with *serializers.HyperlinkedModelSerializer* passed as a parameter**
   * serializing all fields
+    **Example**
       ```ruby
       class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
           class Meta:
@@ -75,6 +77,7 @@
               fields = "__all__"
       ```
   * serializing custom fields
+    **Example**
       ```ruby
       class ModelClassSerializer(serializers.HyperlinkedModelSerializer):
           class Meta:
@@ -86,32 +89,47 @@
 The REST framework supports automatic **urls routing** this is a quick way yo make ulrs.
 #### Prerequisites
 1. Import **urls** from framework
+   **Example**
     ```ruby
     from django.conf.urls import url, include
     from django.urls import path
     ```
 2. Import **views** from gatherer directory
+   **Example**
     ```ruby
     from . import views
     ```
 #### Router
 1. Create a Router
   * DefaultRouter
+     **Example**
       ```ruby
       router = routers.DefaultRouter()
       ```
   * SimpleRouter
+     **Example**
       ```ruby
       router = routers.SimpleRouter()
       ```
  2. Register a Serializer
+     **Example**
       ```ruby
       router.register('url_name', views.ModelClassViewSet)
       ```
  3. Add **router** to application urls
+      **Example**
       ```ruby
       urlpatterns = [
         path('', include(router.urls))
       ]
       ```
- 4. 
+## Extending admin
+  1. Customizing a admin model
+     * Custom class
+      **Example**
+       ```ruby
+        class ModelClassAdmin(admin.ModelAdmin):
+        list_display = ('modelfield', 'modelfield')
+        model = models.ModelClass
+        ```
+     * Register   
