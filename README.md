@@ -204,6 +204,7 @@ Creating view sets from the models in the model class.
 * **Martin Savov** - *Initial work* - [MIT120](https://github.com/MIT120)
 * **Hristiyan Tarnev** - *Initial work* - [Beasteca](https://github.com/beasteca)
 * **Ralitsa Kehayova** - *Initial work* - [Shortcut21](https://github.com/shortcut21)
+* **Artjom Leonov** - *Initial work* - [Shortcut21](https://github.com/qniff)
 
 See also the list of [contributors](https://github.com/teamvirtue/SmartSystemCore/graphs/contributors) who participated in this project.
 
