@@ -31,6 +31,7 @@ from sensor.views import SensorViewSet
 from sensor_reading.views import Sensor_ReadingViewSet
 from unit.views import UnitViewSet
 from weather.views import WeatherViewSet
+from rest_framework_jwt.views import obtain_jwt_token
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -66,6 +67,7 @@ router.register(r'unit', UnitViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/auth/token/', obtain_jwt_token),
     # path('appliance/',include('appliance.urls')),
     # path('appliance_in_building/',include('appliance.urls')),
     # path('appliance_reading/',include('appliance_reading.urls')),

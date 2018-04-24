@@ -28,13 +28,16 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
 }
-
+# curl -X POST -d "username=django&password=c83k2zgdc1" http://localhost:8000/api/auth/token/
 # Application definition
 
 INSTALLED_APPS = [
@@ -97,10 +100,10 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "virtue",
-        "USER": "martinsavov",
-        "PASSWORD": "katinar4e",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "sample_db",
+        "USER": "django",
+        "PASSWORD": "password",
         "HOST": "localhost",
         "PORT": "",
     }
