@@ -32,6 +32,7 @@ from sensor_reading.views import Sensor_ReadingViewSet
 from unit.views import UnitViewSet
 from weather.views import WeatherViewSet
 from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework.authtoken import views as drf_views
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -82,6 +83,5 @@ urlpatterns = [
     # path('unit/',include('unit.urls')),
     # path('weather/',include('weather.urls')),
     path('', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
  ]
