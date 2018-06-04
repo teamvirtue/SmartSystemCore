@@ -53,16 +53,27 @@ INSTALLED_APPS = [
     'building',
     'room',
     'sensor',
-    'unit',
-    'weather',
-    'appliance',
-    'appliance_in_building',
-    'appliance_reading',
-    'person_sleep',
-    'personal_details',
-    'room_reading',
-    'sensor_reading',
+    'grid',
+    'appliance_brightness',
+    'appliance_water_meter',
+    'appliance_water_meter_reading',
+    'battery',
+    'family',
+    'light',
+    'sockets',
+    'list_of_all_possible_appliance',
+    'person_activity',
+    'personal_detail',
+    'room_water_meter_reading',
+    'room_water_meter',
+    'socket_reading',
+    'solar_panel',
+    'solar_panel_reading',
+    'type_of_activity',
+    'weekdays',
 
+    
+    
 ]
 
 MIDDLEWARE = [
