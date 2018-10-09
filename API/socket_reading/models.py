@@ -22,5 +22,6 @@ ENUMFOOD = (
 
 class Socket_Reading(TimeStampedModel):
   power_consumed = models.FloatField(null=True)
+  power_using = models.FloatField(null=True)
   reading_time = models.DateTimeField()
   socket_id = models.ForeignKey(Sockets, on_delete=models.CASCADE)

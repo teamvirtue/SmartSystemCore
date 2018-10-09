@@ -98,6 +98,7 @@ urlpatterns = [
     # path('sensor_reading/',include('sensor_reading.urls')),
     # path('unit/',include('unit.urls')),
     # path('weather/',include('weather.urls')),
+	path('socket_reading/',include('socket_reading.urls')),
     path('', include(router.urls)),
 
  ]
