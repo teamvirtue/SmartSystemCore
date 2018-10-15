@@ -73,7 +73,8 @@ INSTALLED_APPS = [
     'solar_panel_reading',
     'type_of_activity',
     'weekdays',
-    'movement_reading'
+    'movement_reading',
+    'lights'
 
     
     
