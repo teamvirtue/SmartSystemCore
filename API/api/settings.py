@@ -25,7 +25,9 @@ SECRET_KEY = '^dz!9@!x)uz0=%mw0%orevh#afewh$uh8pf7@d%euy#1ppz^uy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.0.50'
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -71,6 +73,7 @@ INSTALLED_APPS = [
     'solar_panel_reading',
     'type_of_activity',
     'weekdays',
+    'movement_reading'
 
     
     

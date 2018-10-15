@@ -20,6 +20,7 @@ from django.urls import path, re_path
 from rest_framework import routers, serializers, viewsets
 from building.views import BuildingViewSet
 from flat.views import FlatViewSet
+from movement_reading.views import MovementReadingViewSet
 from room.views import RoomViewSet
 from sensor.views import SensorViewSet
 from rest_framework_jwt.views import obtain_jwt_token
@@ -77,6 +78,7 @@ router.register(r'solar_panel_reading',Solar_Panel_ReadingViewSet )
 router.register(r'type_of_activity', Type_Of_ActivityViewSet)
 router.register(r'weekdays', WeekdaysViewSet)
 router.register(r'sockets', SocketsViewSet)
+router.register(r'movement_reading', MovementReadingViewSet)
 
 
 #router.register(r'accounts', AccountViewSet)
@@ -100,5 +102,6 @@ urlpatterns = [
     # path('weather/',include('weather.urls')),
 	path('socket_reading/',include('socket_reading.urls')),
     path('', include(router.urls)),
+    path('movement_reading/',include('movement_reading.urls'))
 
  ]
