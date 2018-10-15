@@ -12,3 +12,19 @@ import json
 class MovementReadingViewSet(viewsets.ModelViewSet):
     queryset = MovementReading.objects.all()
     serializer_class = MovementReadingSerializer
+
+
+class MovementReadingSensorRealtimeViewSet(viewsets.ModelViewSet):
+    serializer_class = MovementReadingSerializer
+    def get_queryset(self):
+        sensor = self.kwargs['sensor']
+        queryset = MovementReading.objects.filter(sensor_id=sensor).order_by('-id')[:1]
+        return queryset
+
+
+class MovementReadingSensorAllViewSet(viewsets.ModelViewSet):
+    serializer_class = MovementReadingSerializer
+    def get_queryset(self):
+        sensor = self.kwargs['sensor']
+        queryset = MovementReading.objects.filter(sensor_id=sensor)
+        return queryset

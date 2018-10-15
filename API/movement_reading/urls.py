@@ -21,6 +21,8 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('movement_reading', views.MovementReadingViewSet)
+router.register(r'sensor/(?P<sensor>[0-9]*)/realtime', views.MovementReadingSensorRealtimeViewSet, base_name="realtime")
+router.register(r'sensor/(?P<sensor>[0-9]*)/all', views.MovementReadingSensorAllViewSet, base_name="all")
 
 urlpatterns = [
   path('', include(router.urls))

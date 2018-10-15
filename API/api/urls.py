@@ -102,5 +102,6 @@ urlpatterns = [
     # path('weather/',include('weather.urls')),
 	path('socket_reading/',include('socket_reading.urls')),
     path('', include(router.urls)),
+    path('movement_reading/',include('movement_reading.urls'))
 
  ]
