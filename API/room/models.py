@@ -14,7 +14,7 @@ ENUMGENDER = (
 )
 
 class Room(models.Model):
-  flat_id = models.ForeignKey(Flat, on_delete=models.CASCADE)
+  flat_id = models.OneToOneField(Flat, on_delete=models.CASCADE)
   room_id = models.CharField(max_length=45, unique=True)
   room_name = models.CharField(max_length=45)
   last_humidity = models.FloatField(null=True)
