@@ -74,9 +74,30 @@ class Socket_ReadingRoomIdAllViewSet(viewsets.ModelViewSet):
         return queryset
 
 
+
+class UnusedRecordFoundException(Exception): pass
+
+
 class Socket_ReadingCleanOldViewSet(viewsets.ModelViewSet):
     queryset = Socket_Reading.objects.all()
     serializer_class = Socket_ReadingSerializer
+    def delete(self,instance):
+        finished = False
+        while (not finished):
+            queryset = Socket_Reading.objects.all()
+            try:
+                for x in queryset:
+                    for y in queryset:
+                        if (x.id != y.id and x.reading_time.date() == y.reading_time.date() and x.socket_id == y.socket_id):
+                            if (x.reading_time < y.reading_time):
+                                x.delete()
+                            else:
+                                y.delete()
+                            raise UnusedRecordFoundException
+            except UnusedRecordFoundException:
+                continue
+            finished = True
+        queryset = Socket_Reading.objects.all()
+        serializer_class = Socket_ReadingSerializer
+        return Response("Delete Successfull")
 
-    def destroy(self, request, *args):
-        pass
